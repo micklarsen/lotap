@@ -3,16 +3,15 @@
 > A List of tools and programs with examples on how to use them.  
 > Compiled for studies at Københavns Erhvervsakademi (KEA) in Bachelor of IT-Security
 
-## Wireshark
+# Wireshark
 **A Network protocol analyzer.**
+TBD
 
----
-
-## tcpdump
+# tcpdump
 **A full packet capture tool.**  
 Basically what Wireshark does, but does it on the commandline in linux.  
 
-### Examples
+## Examples
 Capture traffic on device NIC and write to dump.pcap:  
 `tcpdump -i eth0 -w dump.pcap`  
 
@@ -22,22 +21,18 @@ Dump a packet with verbose output:
 Create a new pcap file with filters applied:  
 `sudo tcpdump -r testfile.pcap -w testfile2.pcap 'tcp port 80'`
 
----
-
-## capinfos  
+# capinfos  
 Display meta-data about a capture file  
 
-### Examples
+## Examples
 
 Display metadata about capture:  
 `capinfos testfile.pcap`
 
----
-
-## editcap  
+# editcap  
 Can make large pcap files more managable by splitting them up into smaller files.  
 
-### Examples
+## Examples
 
 Split a pcap file into smaller files of 1000 packets each:  
 `editcap -c 1000 cap.pcapng cap1000`   
@@ -45,12 +40,10 @@ Split a pcap file into smaller files of 1000 packets each:
 Split based on dates:  
 `editcap -B "2017-09-03 18:26:51" cap.pcapng cap2.pcapng`
 
----
-
-## tshark  
+# tshark  
 Just as powerful as wireshark, but more scaleable. Better for repetetive jobs.  
 
-### Examples  
+## Examples  
 
 Read a file:  
 `tshark -r f5-honeypot-release.pcap | head`  
