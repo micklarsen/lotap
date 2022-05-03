@@ -53,3 +53,10 @@ Apply wireshark filters using -Y option:
 
 Look for DNS:  
 `tshark -r cap.pcapng -Y 'dns.qry.name==demo.testfire.net'`
+
+# Netflow
+Collects metadata from packets - is **not** full packet capture.  
+Consists of three main components:  
+- Exporter: `fprobe` that generates netflow updates
+- Collector: `nfcapd` accepts updates from the exporter
+- Analysis: `nfdump` tool to query netflow data
